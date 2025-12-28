@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Tech Track Fun Quiz</title>
+<style>
+body { font-family: Arial; background: #f5f5f5; direction: ltr; }
+
+.container { max-width: 700px; margin: 30px auto; background: #fff; padding: 25px; border-radius: 10px; }
+h2 { text-align: center; }
+.question { margin-bottom: 20px; }
+label { display: block; margin: 6px 0; cursor: pointer; }
+input[type="text"], input[type="email"] { width: 100%; padding: 8px; margin-top: 5px; }
+button { width: 100%; padding: 12px; background: #4CAF50; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; }
+#result { display: none; margin-top: 25px; padding: 20px; background: #eef; border-radius: 10px; text-align: center; font-size: 18px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h2>😄 Tech Track Fun Quiz</h2>
+
+<div class="question">
+<label>Enter your Name</label>
+<input type="text" id="name" required>
+</div>
+<div class="question">
+<label>Email</label>
+<input type="email" id="email" required>
+</div>
+<div class="question">
+<label>Enter your Phone Number</label>
+<input type="text" id="phone" required>
+</div>
+
+<form id="quizForm">
+<div class="question">
+<p>1- لو دخلت مطعم شيك، أول حاجة بتلفت نظرك هي:</p>
+<label><input type="radio" name="q1" value="frontend" required> تناسق ألوان الديكور وشكل المنيو</label>
+<label><input type="radio" name="q1" value="backend"> سرعة نزول الأكل ونظام المطبخ</label>
+<label><input type="radio" name="q1" value="ux"> ملمس الكراسي وإزاي القعدة مريحة</label>
+<label><input type="radio" name="q1" value="data"> المطعم يقترح أكل على ذوقي</label>
+<label><input type="radio" name="q1" value="security"> كاميرات المراقبة والأمان</label>
+</div>
+
+<div class="question">
+<p>2- إيه أكتر حاجة بتعصبك في أي أبلكيشن؟</p>
+<label><input type="radio" name="q2" value="frontend" required> شكل ملخبط أو صور بيكسلة</label>
+<label><input type="radio" name="q2" value="backend"> تحميل بطيء ومفيش رد</label>
+<label><input type="radio" name="q2" value="ux"> تايه ومش عارف أوصل</label>
+<label><input type="radio" name="q2" value="data"> مش فاهم أنا عايز إيه</label>
+<label><input type="radio" name="q2" value="security"> صلاحيات غريبة وتجسس</label>
+</div>
+
+<div class="question">
+<p>3- لو هتبني فيلا أحلامك، تهتم بإيه الأول؟</p>
+<label><input type="radio" name="q3" value="frontend" required> الواجهة والشكل الخارجي</label>
+<label><input type="radio" name="q3" value="backend"> الأساسات والتمديدات</label>
+<label><input type="radio" name="q3" value="ux"> التقسيمة المريحة</label>
+<label><input type="radio" name="q3" value="data"> بيت سمارت وذكي</label>
+<label><input type="radio" name="q3" value="security"> أبواب مصفحة وأمان</label>
+</div>
+
+<div class="question">
+<p>4- في ألعاب الفيديو، تحب تكون مين؟</p>
+<label><input type="radio" name="q4" value="frontend" required> ستايل وشكل مميز</label>
+<label><input type="radio" name="q4" value="backend"> تبني قواعد وتطور</label>
+<label><input type="radio" name="q4" value="ux"> تصمم ممرات سهلة</label>
+<label><input type="radio" name="q4" value="data"> تتوقع حركات العدو</label>
+<label><input type="radio" name="q4" value="security"> الجاسوس الحامي</label>
+</div>
+
+<div class="question">
+<p>5- أكتر شاشة بتحب تبص عليها؟</p>
+<label><input type="radio" name="q5" value="frontend" required> صفحة ويب مليانة ألوان</label>
+<label><input type="radio" name="q5" value="backend"> Terminal وأوامر</label>
+<label><input type="radio" name="q5" value="ux"> Canvas وترتيب عناصر</label>
+<label><input type="radio" name="q5" value="data"> معادلات ورسوم بيانية</label>
+<label><input type="radio" name="q5" value="security"> شفرات ومحاولات اختراق</label>
+</div>
+
+<div class="question">
+<p>6- لما تشوف روبوت في فيلم، أول فكرة؟</p>
+<label><input type="radio" name="q6" value="frontend" required> شكله واقعي ولطيف</label>
+<label><input type="radio" name="q6" value="backend"> الميكانيزم اللي بيحركه</label>
+<label><input type="radio" name="q6" value="ux"> إزاي الإنسان يتعامل معاه</label>
+<label><input type="radio" name="q6" value="data"> إزاي بيفكر لوحده</label>
+<label><input type="radio" name="q6" value="security"> لو اتهاك هيعمل إيه</label>
+</div>
+
+<div class="question">
+<p>7- في بروجكت جماعي، دورك بيكون:</p>
+<label><input type="radio" name="q7" value="frontend" required> البريزنتيشن والشكل</label>
+<label><input type="radio" name="q7" value="backend"> اللوجيك والأساس</label>
+<label><input type="radio" name="q7" value="ux"> تنظيم الشغل</label>
+<label><input type="radio" name="q7" value="data"> تحليل النتائج</label>
+<label><input type="radio" name="q7" value="security"> مراجعة الأخطاء</label>
+</div>
+
+<div class="question">
+<p>8- مهارة تتمنى تكون عندك دلوقتي:</p>
+<label><input type="radio" name="q8" value="frontend" required> تخلي أي حاجة تحفة</label>
+<label><input type="radio" name="q8" value="backend"> تبني سيستم ثابت</label>
+<label><input type="radio" name="q8" value="ux"> تفهم البشر</label>
+<label><input type="radio" name="q8" value="data"> تتوقع المستقبل</label>
+<label><input type="radio" name="q8" value="security"> محدش يوصلك</label>
+</div>
+
+<div class="question">
+<p>9- لو النت قطع، أول رد فعل؟</p>
+<label><input type="radio" name="q9" value="frontend" required> أضايق على المحتوى</label>
+<label><input type="radio" name="q9" value="backend"> أدخل على إعدادات الراوتر</label>
+<label><input type="radio" name="q9" value="ux"> أتأمل صفحة No Internet</label>
+<label><input type="radio" name="q9" value="data"> أحلل نمط القطع</label>
+<label><input type="radio" name="q9" value="security"> أخاف يكون اختراق</label>
+</div>
+
+<div class="question">
+<p>10- نوع الأفلام المفضل:</p>
+<label><input type="radio" name="q10" value="frontend" required> فن وتصميم</label>
+<label><input type="radio" name="q10" value="backend"> كواليس الصناعة</label>
+<label><input type="radio" name="q10" value="ux"> علم نفس</label>
+<label><input type="radio" name="q10" value="data"> خيال علمي</label>
+<label><input type="radio" name="q10" value="security"> جريمة وغموض</label>
+</div>
+
+
+<button type="submit">اعرف التراك المناسب ليك 🚀</button>
+</form>
+
+<div id="result"></div>
+</div>
+
+<script>
+const quizForm = document.getElementById('quizForm');
+quizForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const formData = new FormData(quizForm);
+    const scores = {frontend:0, backend:0, data:0, security:0, ux:0};
+    for(let [key, value] of formData.entries()){
+        if(scores[value] !== undefined) scores[value]++;
+    }
+   
+    let bestTrack = Object.keys(scores).reduce((a,b) => scores[a] >= scores[b]? a:b);
+
+  const messages = {
+    frontend: "🎨 واو! شكراً لأنك شاركتنا وقتك! 👀 واضح إن عينك دايمًا على التفاصيل… Frontend مناسب ليك جدًا! 😎✨ إزاي، بس إحنا شايفينك Designer جامد! 🖌️💻",
+    backend: "🛠️ شكراً ليك! إجاباتك بتوحي إن دماغك على الجيستنج… 🎭 Backend هو ملعبك! 😄، بس إحنا شايفينك العقل المدبر ورا كل حاجة شغالة صح! 💡💻",
+    data: "📊 ياي! شكراً لأنك لعبت معانا… 🤓 الأرقام والداتا بتناديك! Data / AI هو المكان اللي هتلمع فيه! ✨، بس إحنا شايفينك عبقري التحليل! 🔍💡",
+    security: "🕵️‍♂️🔐 شكراً لمشاركتك! واضح إنك دايمًا سابق بخطوة… 🚨 Cyber Security هو التراك المناسب ليك! 😎 إزاي، بس إحنا شايفينك حامي النظام وكأنك بطل أفلام! 💥🛡️",
+    ux: "💡💖 شكراً ليك! إنت فاهم المستخدم أكتر من أي حد… UI/UX هو المكان اللي هتلمع فيه! 😄🎉، بس إحنا شايفينك خبير تجربة المستخدم، والناس هتحب شغلك! 🖌️👀"
+};
+
+    const roadmap = {
+        frontend:"HTML → CSS → JS → React → Projects",
+        backend:"Java → Python → Databases → APIs → Projects",
+        data:"Python → SQL → ML Basics → AI Projects",
+        security:"Networking → Linux → Pen Testing → Security Tools",
+        ux:"Design Principles → Wireframes → Figma → Prototyping → Projects"
+    };
+    document.getElementById('result').innerHTML = `
+        <h3>النتيجة النهائية: ${bestTrack.toUpperCase()}</h3>
+        <p>${messages[bestTrack]}</p>
+        <p><strong>Mini Roadmap:</strong> ${roadmap[bestTrack]}</p>
+    `;
+    document.getElementById('result').style.display = 'block';
+});
+</script>
+</body>
+</html>
